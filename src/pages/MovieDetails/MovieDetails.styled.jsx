@@ -19,7 +19,6 @@ border: 1px solid #0e49eb90;
   margin-bottom: 10px;
 
 
-
   :hover{
     background-color: #0e49ebaf;
      color: white;
@@ -34,6 +33,8 @@ export const Link = styled(NavLink)`
   color: black;
   font-weight: 500;
   margin-top: 10px;
+
+ background-color: #0e49eb3a;
 
 
   &.active {

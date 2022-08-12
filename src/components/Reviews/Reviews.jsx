@@ -7,7 +7,7 @@ const axios = require('axios');
 const Reviews = () => {
     const { movieId } = useParams();
     const [data, setData] = useState([]);
-    console.log(data);
+
     useEffect(() => {
    
         if (!movieId) {

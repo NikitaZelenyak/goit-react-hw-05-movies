@@ -40,12 +40,13 @@ const Cast = () => {
        
     },[movieId])
     
+    const linkImg = "https://image.tmdb.org/t/p/w500";
 
     return data && data.map(({id,name,profile_path}) => {
         return (
             <ul>
                 <Item key={id}>
-                    <img width={90} height={120} src={'https://image.tmdb.org/t/p/w500'+ profile_path} alt={name} />
+                    <img width={90} height={120} src={ profile_path && linkImg.concat(profile_path)  } alt={name} />
                     <p>{ name}</p>
                 </Item>
             </ul>
