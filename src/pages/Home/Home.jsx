@@ -1,11 +1,11 @@
 import { useEffect,useState } from "react"
 import { Link,Item } from "./Home.styled";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 const axios = require('axios');
 
 const Home = () => {
     const [data, setData] = useState([]);
-    const location = useLocation();
+    // const location = useLocation();
 
     useEffect(() => {
     
@@ -28,7 +28,7 @@ const fetchData = async () => {
 
 }, [])
 
-    const LINK = '/movies/';
+
 
  
         return (
@@ -38,8 +38,8 @@ const fetchData = async () => {
 
                     return (
                         <Item key={id}>
-                    <Link key={id} to={LINK.concat(`${id}`)}
-                    state={{from:location}}
+                    <Link  to={`/movies/${id}`}
+                    // state={{from:location}}
                     >
                         {title ? title : name}
                     </Link>

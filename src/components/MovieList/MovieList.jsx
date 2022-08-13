@@ -17,7 +17,7 @@ const MovieList = ({ data }) => {
                         {data && data.map(({ id, title }) => {
                             return (
                                 <Item key={id} >                                              
-                                    <Link  to={`${id}`} state={{ from: location }} >{title} </Link>
+                                    <Link   to={`/movies/${id}`} state={{ from: location }} >{title} </Link>
                                 </Item>)
                         })}
                     </ul>
