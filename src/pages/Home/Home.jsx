@@ -6,7 +6,7 @@ const axios = require('axios');
 const Home = () => {
     const [data, setData] = useState([]);
     const location = useLocation();
-    
+
     useEffect(() => {
     
 const fetchData = async () => {
@@ -17,7 +17,9 @@ const fetchData = async () => {
 
   }
   catch (error) {
-    console.error(error);
+      
+      console.error(error);
+     
   }
 }
     
@@ -30,6 +32,7 @@ const fetchData = async () => {
 
     return data && data.map(({id,title,name}) => {
         return (
+            
             <ul>
                 <Item key={id}>
                     <Link to={LINK.concat(`${id}`)}

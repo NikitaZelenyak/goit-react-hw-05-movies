@@ -1,7 +1,7 @@
 
 import { lazy } from "react";
-import Home from "pages/Home";
-import Movie from "pages/Movie";
+import Home from "pages/Home/Home";
+import Movie from "pages/Movie/Movie";
 import MovieDetails from "pages/MovieDetails/MovieDetails";
 import {  Route, Routes } from "react-router-dom";
 import { Container,Header, Link } from "./App.styled";
