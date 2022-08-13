@@ -12,8 +12,9 @@ const MovieDetails = () => {
     const [imgLink, setImgLink] = useState("");
     const location = useLocation();
 
-    const backLink = location.state?.from ??  '/movies' ;
- 
+    const backLink = location?.state?.from ??  '/' ;
+ console.log(backLink);
+    
     useEffect(() => {
         
         if (!movieId) {
@@ -63,19 +64,17 @@ const MovieDetails = () => {
                     <p>{data.overview}</p>
                     <h3>Genres</h3>
            
+                    <ul>
                     {data.genres && data.genres.map(({ id, name }) => {
                
-                        return (                
-                            <ul>                    
+                        return (                                                            
                                 <Item key={id}>                
                                     {name}                     
-                                </Item>                 
-                            </ul>
-               
-                )
-            }
-               
-                )}
+                                </Item>                     
+                        )
+                    }
+                        )}
+                           </ul>
 
                 </Box>
            

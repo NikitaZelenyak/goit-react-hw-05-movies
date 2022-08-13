@@ -30,22 +30,25 @@ const fetchData = async () => {
 
     const LINK = '/movies/';
 
-    return data && data.map(({id,title,name}) => {
+ 
         return (
             
             <ul>
-                <Item key={id}>
-                    <Link to={LINK.concat(`${id}`)}
+                {data && data.map(({ id, title, name }) => {
+
+                    return (
+                        <Item key={id}>
+                    <Link key={id} to={LINK.concat(`${id}`)}
                     state={{from:location}}
                     >
                         {title ? title : name}
                     </Link>
-                </Item>
+                </Item>) }
+       
+    )}
             </ul>
         )
-    }
-       
-    )
+   
 }
 
 export default Home

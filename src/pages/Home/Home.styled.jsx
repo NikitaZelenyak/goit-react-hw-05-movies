@@ -26,4 +26,5 @@ export const Link = styled(NavLink)`
 
 export const Item =styled.li`
     list-style: none;
+       margin-top: 15px;
 `

@@ -38,16 +38,18 @@ const Reviews = () => {
     }, [movieId])
     
 
-    return data.length === 0  ? <p>We don't have any reviews for this movie</p> : data.map(({id,author,content}) => {
+    return <ul>
+        {data.length === 0 ? <p>We don't have any reviews for this movie</p> : data.map(({ id, author, content }) => {
         return (
-            <ul>
+          
                 <Item key={id}>
                     <h3>{author}</h3>
                     <p>{ content}</p>
                 </Item>
-            </ul>
+           
         )
-    })
+    })}
+         </ul>
 }
 
 export default Reviews;

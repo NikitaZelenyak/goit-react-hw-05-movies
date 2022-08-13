@@ -7,15 +7,19 @@ const MovieList = ({ data }) => {
 
     const location = useLocation();
 
-    return data && data.map(({id,title}) => {
+  
 
         return (
             <Suspense>    
                 <main>     
                     <ul>             
-                        <Item key={id}>                      
-                            <Link to={`${id}`} state={{ from: location }} >{title} </Link>
-                        </Item>
+ 
+                        {data && data.map(({ id, title }) => {
+                            return (
+                                <Item key={id} >                                              
+                                    <Link  to={`${id}`} state={{ from: location }} >{title} </Link>
+                                </Item>)
+                        })}
                     </ul>
                 </main>
             </Suspense>
@@ -25,7 +29,7 @@ const MovieList = ({ data }) => {
 
          
         )
-    })
+    
 }
 
 export default MovieList
