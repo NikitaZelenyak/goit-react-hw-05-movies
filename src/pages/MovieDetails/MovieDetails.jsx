@@ -12,8 +12,8 @@ const MovieDetails = () => {
     const [imgLink, setImgLink] = useState("");
     const location = useLocation();
 
-    const backLink = location.state?.from ? location.state.from : '/';
-
+    const backLink = location.state?.from ??  '/movies';
+ 
     useEffect(() => {
         
         if (!movieId) {

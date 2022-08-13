@@ -1,11 +1,12 @@
 import { useEffect,useState } from "react"
 import { Link,Item } from "./Home.styled";
-
+import { useLocation } from "react-router-dom";
 const axios = require('axios');
 
 const Home = () => {
     const [data, setData] = useState([]);
-
+    const location = useLocation();
+    
     useEffect(() => {
     
 const fetchData = async () => {
@@ -31,7 +32,9 @@ const fetchData = async () => {
         return (
             <ul>
                 <Item key={id}>
-                    <Link to={LINK.concat(`${id}`)}>
+                    <Link to={LINK.concat(`${id}`)}
+                    state={{from:location}}
+                    >
                         {title ? title : name}
                     </Link>
                 </Item>
